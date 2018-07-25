@@ -1,5 +1,5 @@
 # chess
-**Original Developers:** 
+**Original Developers:** <br>
   *Nathan Brophy: Server<br>
   *Julie Weber: JavaScript and Html<br> 
   *Amber Nelson: Javascript and Html <br>
