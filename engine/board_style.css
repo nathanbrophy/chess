@@ -1,0 +1,12 @@
+.piece {
+  border: thick;
+}
+
+#board_container {
+  display: grid;
+}
+
+td {
+  height: 100px;
+  background-color: lightgray;
+}
