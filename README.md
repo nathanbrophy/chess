@@ -1,7 +1,7 @@
 # chess
 **Original Developers:** 
-  *Nathan Brophy: Server 
-  *Julie Weber: JavaScript and Html 
-  *Amber Nelson: Javascript and Html 
+  *Nathan Brophy: Server<br>
+  *Julie Weber: JavaScript and Html<br> 
+  *Amber Nelson: Javascript and Html <br>
   *Joe Spielman: Clippy<br>
 This is an online chess game for our fun!
