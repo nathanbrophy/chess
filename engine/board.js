@@ -7,3 +7,19 @@ function load_board() {
   console.log(board);
 }
 load_board();
+
+
+function print_board() {
+  var table = "<table>";
+  for (var i = 0; i < board.length; i++) {
+    table = table + "<tr>"
+    for (var j = 0; j < board[i].length; j++) {
+          console.log(i + " " + j);
+      board[i][j] = board[i][j] || "";
+       table = table + "<td class='piece' id=" + board[i][j] + ">" + board[i][j] + "</td>";
+    }
+    table = table +"</tr>";
+  }
+  table = table + "</table>";
+  document.getElementById('board_container').innerHTML= table;
+}
