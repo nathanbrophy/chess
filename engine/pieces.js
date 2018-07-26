@@ -6,7 +6,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_king"
+    id: "black_king",
+    class: "king"
   },
 
   black_queen: {
@@ -16,7 +17,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_queen"
+    id: "black_queen",
+    class: "queen"
   },
 
   black_bishop_1: {
@@ -26,7 +28,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_bishop_1"
+    id: "black_bishop_1",
+    class: "bishop"
   },
 
   black_bishop_2: {
@@ -36,7 +39,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_bishop_2"
+    id: "black_bishop_2",
+    class: "bishop"
   },
 
   black_knight_1: {
@@ -46,7 +50,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_knight_1"
+    id: "black_knight_1",
+    class: "knight"
   },
 
   black_knight_2: {
@@ -56,7 +61,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_knight_2"
+    id: "black_knight_2",
+    class: "knight"
   },
 
   black_rook_1: {
@@ -66,7 +72,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_rook_1"
+    id: "black_rook_1",
+    class: "rook"
   },
 
   black_rook_2: {
@@ -76,7 +83,8 @@ var pieces = {
       y: 7
     },
     captured: false,
-    id: "black_rook_2"
+    id: "black_rook_2",
+    class: "rook"
   },
 
 
@@ -87,7 +95,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_1"
+    id: "black_pawn_1",
+    class: "pawn"
   },
 
   black_pawn_2: {
@@ -97,7 +106,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_2"
+    id: "black_pawn_2",
+    class: "pawn"
   },
 
   black_pawn_3: {
@@ -107,7 +117,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_3"
+    id: "black_pawn_3",
+    class: "pawn"
   },
 
   black_pawn_4: {
@@ -117,7 +128,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_4"
+    id: "black_pawn_4",
+    class: "pawn"
   },
 
   black_pawn_5: {
@@ -127,7 +139,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_5"
+    id: "black_pawn_5",
+    class: "pawn"
   },
 
   black_pawn_6: {
@@ -137,7 +150,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_6"
+    id: "black_pawn_6",
+    class: "pawn"
   },
 
   black_pawn_7: {
@@ -147,7 +161,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_7"
+    id: "black_pawn_7",
+    class: "pawn"
   },
 
   black_pawn_8: {
@@ -157,7 +172,8 @@ var pieces = {
       y: 6
     },
     captured: false,
-    id: "black_pawn_8"
+    id: "black_pawn_8",
+    class: "pawn"
   },
 
 
@@ -168,7 +184,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_king"
+    id: "white_king",
+    class: "king"
   },
 
   white_queen: {
@@ -178,7 +195,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_queen"
+    id: "white_queen",
+    class: "queen"
   },
 
   white_bishop_1: {
@@ -188,7 +206,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_bishop_1"
+    id: "white_bishop_1",
+    class: "bishop"
   },
 
   white_bishop_2: {
@@ -198,7 +217,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_bishop_2"
+    id: "white_bishop_2",
+    class: "bishop"
   },
 
   white_knight_1: {
@@ -208,7 +228,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_knight_1"
+    id: "white_knight_1",
+    class: "knight"
   },
 
   white_knight_2: {
@@ -218,7 +239,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_knight_2"
+    id: "white_knight_2",
+    class: "knight"
   },
 
   white_rook_1: {
@@ -228,7 +250,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_rook_1"
+    id: "white_rook_1",
+    class: "rook"
   },
 
   white_rook_2: {
@@ -238,7 +261,8 @@ var pieces = {
       y: 0
     },
     captured: false,
-    id: "white_rook_2"
+    id: "white_rook_2",
+    class: "rook"
   },
 
 
@@ -249,7 +273,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_1"
+    id: "white_pawn_1",
+    class: "pawn"
   },
 
   white_pawn_2: {
@@ -259,7 +284,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_2"
+    id: "white_pawn_2",
+    class: "pawn"
   },
 
   white_pawn_3: {
@@ -269,7 +295,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_3"
+    id: "white_pawn_3",
+    class: "pawn"
   },
 
   white_pawn_4: {
@@ -279,7 +306,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_4"
+    id: "white_pawn_4",
+    class: "pawn"
   },
 
   white_pawn_5: {
@@ -289,7 +317,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_5"
+    id: "white_pawn_5",
+    class: "pawn"
   },
 
   white_pawn_6: {
@@ -299,7 +328,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_6"
+    id: "white_pawn_6",
+    class: "pawn"
   },
 
   white_pawn_7: {
@@ -309,7 +339,8 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_7"
+    id: "white_pawn_7",
+    class: "pawn"
   },
 
   white_pawn_8: {
@@ -319,6 +350,7 @@ var pieces = {
       y: 1
     },
     captured: false,
-    id: "white_pawn_8"
+    id: "white_pawn_8",
+    class: "pawn"
   }
 }
