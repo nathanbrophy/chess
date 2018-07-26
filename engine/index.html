@@ -5,11 +5,49 @@
     <script src="board.js"></script>
     <script src="engine.js"></script>
     <link rel="stylesheet" href="board_style.css">
+    <meta charset="utf-8"></meta>
+    <title>Mav Chess</title>
   </head>
   <body>
 
-    <div id="board_container"></div>
+    <div id="header">
+      <h1>Maverick Chess</h1>
+    </div>
 
+    <div style="overflow:auto">
+      <div class="menu">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+      </div>
+
+      <div class="main">
+        <div id="board_container"></div>
+      </div>
+
+      <div class="right">
+        <h2>Leaderboard</h2>
+        <table id="leaderboard">
+          <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score?</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dat bitch Julie</td>
+              <td>:)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="footer">some maverick software consultants got bored</div>
 
     <script> print_board(); </script>
   </body>
