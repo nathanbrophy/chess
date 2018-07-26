@@ -7,17 +7,17 @@
   display: grid;
 }
 
-.piece {
+.tile {
   height: 100px;
   text-align: center;
   font-size: 90px;
 }
 
-.piece:hover {
+.tile:hover {
   background-color: red;
 }
 
-.piece:checked {
+.tile:checked {
   background-color: darkred;
 }
 
