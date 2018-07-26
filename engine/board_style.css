@@ -9,8 +9,34 @@
 
 .piece {
   height: 100px;
+  text-align: center;
+  font-size: 90px;
+}
+
+.piece:hover {
+  background-color: red;
+}
+
+.piece:checked {
+  background-color: darkred;
+}
+
+.black {
+  background-color: gray;
+}
+.white {
   background-color: lightgray;
 }
+
+.selected {
+  background-color: blue !important;
+}
+
+td a {
+    display:block;
+    width:100%;
+}
+
 
 #leaderboard {
   text-align: center;

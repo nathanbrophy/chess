@@ -7,7 +7,8 @@ var pieces = {
     },
     captured: false,
     id: "black_king",
-    class: "king"
+    class: "king",
+    unicode: "&#9818"
   },
 
   black_queen: {
@@ -18,7 +19,8 @@ var pieces = {
     },
     captured: false,
     id: "black_queen",
-    class: "queen"
+    class: "queen",
+    unicode: "&#9819"
   },
 
   black_bishop_1: {
@@ -29,7 +31,8 @@ var pieces = {
     },
     captured: false,
     id: "black_bishop_1",
-    class: "bishop"
+    class: "bishop",
+    unicode: "&#9821"
   },
 
   black_bishop_2: {
@@ -40,7 +43,8 @@ var pieces = {
     },
     captured: false,
     id: "black_bishop_2",
-    class: "bishop"
+    class: "bishop",
+    unicode: "&#9821"
   },
 
   black_knight_1: {
@@ -51,7 +55,8 @@ var pieces = {
     },
     captured: false,
     id: "black_knight_1",
-    class: "knight"
+    class: "knight",
+    unicode: "&#9822"
   },
 
   black_knight_2: {
@@ -62,7 +67,8 @@ var pieces = {
     },
     captured: false,
     id: "black_knight_2",
-    class: "knight"
+    class: "knight",
+    unicode: "&#9822"
   },
 
   black_rook_1: {
@@ -73,7 +79,8 @@ var pieces = {
     },
     captured: false,
     id: "black_rook_1",
-    class: "rook"
+    class: "rook",
+    unicode: "&#9820"
   },
 
   black_rook_2: {
@@ -84,7 +91,8 @@ var pieces = {
     },
     captured: false,
     id: "black_rook_2",
-    class: "rook"
+    class: "rook",
+    unicode: "&#9820"
   },
 
 
@@ -96,7 +104,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_1",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_2: {
@@ -107,7 +116,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_2",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_3: {
@@ -118,7 +128,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_3",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_4: {
@@ -129,7 +140,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_4",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_5: {
@@ -140,7 +152,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_5",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_6: {
@@ -151,7 +164,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_6",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_7: {
@@ -162,7 +176,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_7",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
   black_pawn_8: {
@@ -173,7 +188,8 @@ var pieces = {
     },
     captured: false,
     id: "black_pawn_8",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9823"
   },
 
 
@@ -185,7 +201,8 @@ var pieces = {
     },
     captured: false,
     id: "white_king",
-    class: "king"
+    class: "king",
+    unicode: "&#9812"
   },
 
   white_queen: {
@@ -196,7 +213,8 @@ var pieces = {
     },
     captured: false,
     id: "white_queen",
-    class: "queen"
+    class: "queen",
+    unicode: "&#9813"
   },
 
   white_bishop_1: {
@@ -207,7 +225,8 @@ var pieces = {
     },
     captured: false,
     id: "white_bishop_1",
-    class: "bishop"
+    class: "bishop",
+    unicode: "&#9815"
   },
 
   white_bishop_2: {
@@ -218,7 +237,8 @@ var pieces = {
     },
     captured: false,
     id: "white_bishop_2",
-    class: "bishop"
+    class: "bishop",
+    unicode: "&#9815"
   },
 
   white_knight_1: {
@@ -229,7 +249,8 @@ var pieces = {
     },
     captured: false,
     id: "white_knight_1",
-    class: "knight"
+    class: "knight",
+    unicode: "&#9816"
   },
 
   white_knight_2: {
@@ -240,7 +261,8 @@ var pieces = {
     },
     captured: false,
     id: "white_knight_2",
-    class: "knight"
+    class: "knight",
+    unicode: "&#9816"
   },
 
   white_rook_1: {
@@ -251,7 +273,8 @@ var pieces = {
     },
     captured: false,
     id: "white_rook_1",
-    class: "rook"
+    class: "rook",
+    unicode: "&#9814"
   },
 
   white_rook_2: {
@@ -262,7 +285,8 @@ var pieces = {
     },
     captured: false,
     id: "white_rook_2",
-    class: "rook"
+    class: "rook",
+    unicode: "&#9814"
   },
 
 
@@ -274,7 +298,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_1",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_2: {
@@ -285,7 +310,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_2",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_3: {
@@ -296,7 +322,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_3",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_4: {
@@ -307,7 +334,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_4",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_5: {
@@ -318,7 +346,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_5",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_6: {
@@ -329,7 +358,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_6",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_7: {
@@ -340,7 +370,8 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_7",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   },
 
   white_pawn_8: {
@@ -351,6 +382,7 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_8",
-    class: "pawn"
+    class: "pawn",
+    unicode: "&#9817"
   }
 }
