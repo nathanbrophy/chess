@@ -5,28 +5,57 @@ var NOTSTARTED = 3;
 
 var game_info = {
   turn: WHITETURN,
+  current_move: {
+    start_selected: {
+      tile_id: "",
+      piece_id: "",
+      piece_class: ""
+    },
+    end_selected: {
+      tile_id: "",
+      piece_id: "",
+      piece_class: "",
+      isEmpty: ""
+    }
+  },
   move_log: {}
 }
 
 
 function valid_first_selection(piece) {
+  var valid = false;
   if (game_info.turn == WHITETURN) {
-    return piece.classList.contains("white_piece");
+    valid = piece.classList.contains("white_piece");
   } else if (game_info.turn == BLACKTURN) {
-    return piece.classList.contains("black_piece");
-  } else {
-    return false;
+    valid = piece.classList.contains("black_piece");
   }
+
+  if (valid) {
+    game_info.current_move.start_selected.piece_id = piece.id;
+    game_info.current_move.start_selected.piece_class = piece.classList[0];
+    game_info.current_move.start_selected.tile_id = piece.parentElement.id;
+  }
+
+  return valid;
 }
 
 function valid_second_selection(piece) {
+  var valid = false;
   if (game_info.turn == WHITETURN) {
-    return piece.classList.contains("black_piece") || piece.classList.contains("empty");
+    valid = piece.classList.contains("black_piece") || piece.classList.contains("empty");
   } else if (game_info.turn == BLACKTURN) {
-    return piece.classList.contains("white_piece") || piece.classList.contains("empty");
-  } else {
-    return false;
+    valid = piece.classList.contains("white_piece") || piece.classList.contains("empty");
   }
+
+  if (valid) {
+    game_info.current_move.end_selected.tile_id = piece.parentElement.id;
+    game_info.current_move.end_selected.isEmpty = piece.classList.contains("empty");
+    if (!game_info.current_move.end_selected.isEmpty) {
+      game_info.current_move.end_selected.piece_id = piece.id;
+      game_info.current_move.end_selected.piece_class = piece.classList[0];
+    }
+  }
+  return valid;
 }
 
 function validate_move(start_location, end_location, piece_id) {

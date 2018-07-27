@@ -34,7 +34,7 @@ function load_pieces() {
     for (var j = 0; j < board[i].length; j++) {
       var elem = document.getElementById(i + "" + j);
       if (board[i][j]) {
-        var piece_div = "<div id='" + board[i][j].id + "' class='" + board[i][j].color + " piece" + "'>" +  board[i][j].unicode + "</div>";
+        var piece_div = "<div id='" + board[i][j].id + "' class='" + board[i][j].class + " piece " + board[i][j].color + "'>" +  board[i][j].unicode + "</div>";
       } else {
         var piece_div = "<div class='empty'></div>";
       }
@@ -49,7 +49,7 @@ var selected_count = 0;
 function select(id) {
   var tile = document.getElementById(id);
   var elem = tile.children[0];
-    console.log(elem.classList.contains("selected"));
+
   if (elem.classList.contains("selected")) {
     elem.classList.remove("selected");
     selected_count--;
