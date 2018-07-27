@@ -9,12 +9,14 @@ var game_info = {
     start_selected: {
       tile_id: "",
       piece_id: "",
-      piece_class: ""
+      piece_class: "",
+      piece: {}
     },
     end_selected: {
       tile_id: "",
       piece_id: "",
       piece_class: "",
+      piece: {},
       isEmpty: ""
     }
   },
@@ -34,6 +36,7 @@ function valid_first_selection(piece) {
     game_info.current_move.start_selected.piece_id = piece.id;
     game_info.current_move.start_selected.piece_class = piece.classList[0];
     game_info.current_move.start_selected.tile_id = piece.parentElement.id;
+    game_info.current_move.start_selected.piece = pieces[piece.id];
   }
 
   return valid;
@@ -53,62 +56,69 @@ function valid_second_selection(piece) {
     if (!game_info.current_move.end_selected.isEmpty) {
       game_info.current_move.end_selected.piece_id = piece.id;
       game_info.current_move.end_selected.piece_class = piece.classList[0];
+      game_info.current_move.end_selected.piece = pieces[piece.id];
     }
   }
   return valid;
 }
 
-function validate_move(start_location, end_location, piece_id) {
-  var piece = document.getElementById(piece_id);
-  switch (piece.class) {
+function validate_move() {
+  switch (game_info.current_move.start_selected.piece_class) {
     case "king":
-      return king_validate_move(start_location, end_location, piece);
+      return king_validate_move();
       break;
     case "queen":
-      return queen_validate_move(start_location, end_location, piece);
+      return queen_validate_move();
       break;
     case "bishop":
-      return bishop_validate_move(start_location, end_location, piece);
+      return bishop_validate_move();
       break;
     case "kinght":
-      return knight_validate_move(start_location, end_location, piece);
+      return knight_validate_move();
       break;
     case "rook":
-      return rook_validate_move(start_location, end_location, piece);
+      return rook_validate_move();
       break;
     case "pawn":
-      return pawn_validate_move(start_location, end_location, piece);
+      return pawn_validate_move();
       break;
     default:
       return false;
-
   }
 }
 
-function valid_selection() {
+function king_validate_move() {
+  var piece = game_info.current_move.start_selected.piece;
+  var x = Number(game_info.current_move.end_selected.tile_id[0]);
+  var y = Number(game_info.current_move.end_selected.tile_id[1]);
+
+  var x_dif = Math.abs(piece.location.x - x);
+  var y_dif = Math.abs(piece.location.y - y);
+
+  if ((x_dif == 1 && y_dif == 1) || (x_dif == 1 && y_dif == 0) || (x_dif == 0 && y_dif == 1)) {
+    pieces[piece.id].location.x = x;
+    pieces[piece.id].location.y = y;
+    console.log("move");
+    console.log(pieces);
+  }
+}
+
+function queen_validate_move() {
 
 }
 
-function king_validate_move(start_location, end_location, piece) {
+function bishop_validate_move() {
 
 }
 
-function queen_validate_move(start_location, end_location, piece) {
+function knight_validate_move() {
 
 }
 
-function bishop_validate_move(start_location, end_location, piece) {
+function rook_validate_move() {
 
 }
 
-function knight_validate_move(start_location, end_location, piece) {
-
-}
-
-function rook_validate_move(start_location, end_location, piece) {
-
-}
-
-function pawn_validate_move(start_location, end_location, piece) {
+function pawn_validate_move() {
 
 }
