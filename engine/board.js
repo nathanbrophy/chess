@@ -38,4 +38,29 @@ function load_pieces() {
       }
     }
   }
+  load_listeners();
+}
+
+var selected_count = 0;
+
+function select(id) {
+  var elem = document.getElementById(id);
+  if (elem.classList.contains("selected")) {
+    elem.classList.remove("selected");
+    selected_count--;
+  } else if (selected_count < 2) {
+    elem.classList.add("selected");
+    selected_count++;
+  }
+}
+
+function load_listeners() {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      var id = i + "" + j;
+      document.getElementById(id).addEventListener("click", function(e) {
+        select(e.target.id);
+      });
+    }
+  }
 }
