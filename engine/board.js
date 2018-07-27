@@ -22,7 +22,6 @@ function print_board() {
     }
     table += "</tr>";
     color_class = !color_class;
-
   }
 
   table += "</table>";
@@ -54,19 +53,28 @@ function select(id) {
     elem.classList.remove("selected");
     selected_count--;
     return;
-  }
-
-  if (selected_count==0 && valid_first_selection(elem)) {
+  } else if (selected_count==0 && valid_first_selection(elem)) {
     elem.classList.add("selected");
     selected_count++;
     return;
-  }
-
-  if (selected_count==1 && valid_second_selection(elem)) {
+  } else if (selected_count==1 && valid_second_selection(elem)) {
     elem.classList.add("selected");
     selected_count++;
-    return;
+    validate_move();
+    clear_selected();
   }
+}
+
+function clear_selected() {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      var elem = document.getElementById(i + "" + j).children[0];
+      if (elem.classList.contains("selected")) {
+        elem.classList.remove("selected");
+      }
+    }
+  }
+  selected_count = 0;
 }
 
 function load_listeners() {
@@ -78,4 +86,20 @@ function load_listeners() {
       });
     }
   }
+}
+
+function clear_tile(id) {
+  document.getElementById(id).innerHTML = "<div class='empty'></div>";
+}
+
+function add_piece(tile_id, piece) {
+  if (!document.getElementById(title_id).children[0].classList.contains("empty")) { // capture
+    window.alert(document.getElementById(title_id).children[0].classList[0] + " captured");
+  }
+  document.getElementById(tile_id).innerHTML = "<div id='" + piece.id + "' class='" + piece.class + " piece " + piece.color + "'>" +  piece.unicode + "</div>";
+}
+
+function move_piece(start_id, end_id, piece) {
+  clear_tile(start_id);
+  add_piece(end_id, piece);
 }
