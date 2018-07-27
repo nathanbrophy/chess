@@ -43,23 +43,21 @@ function load_pieces() {
   load_listeners();
 }
 
-var selected_count = 0;
-
 function select(id) {
   var tile = document.getElementById(id);
   var elem = tile.children[0];
 
   if (elem.classList.contains("selected")) {
     elem.classList.remove("selected");
-    selected_count--;
+    game_info.selected_count--;
     return;
-  } else if (selected_count==0 && valid_first_selection(elem)) {
+  } else if (game_info.selected_count==0 && valid_first_selection(elem)) {
     elem.classList.add("selected");
-    selected_count++;
+    game_info.selected_count++;
     return;
-  } else if (selected_count==1 && valid_second_selection(elem)) {
+  } else if (game_info.selected_count==1 && valid_second_selection(elem)) {
     elem.classList.add("selected");
-    selected_count++;
+    game_info.selected_count++;
     validate_move();
     clear_selected();
   }
@@ -74,7 +72,7 @@ function clear_selected() {
       }
     }
   }
-  selected_count = 0;
+  game_info.selected_count = 0;
 }
 
 function load_listeners() {

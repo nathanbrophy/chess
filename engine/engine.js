@@ -5,6 +5,7 @@ var NOTSTARTED = 3;
 
 var game_info = {
   turn: WHITETURN,
+  selected_count = 0,
   current_move: {
     start_selected: {
       tile_id: "",
