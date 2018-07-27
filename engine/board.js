@@ -32,10 +32,13 @@ function print_board() {
 function load_pieces() {
   for (var i = 0; i < board.length; i++) {
     for (var j = 0; j < board[i].length; j++) {
+      var elem = document.getElementById(i + "" + j);
       if (board[i][j]) {
-        var elem = document.getElementById(i + "" + j);
-        elem.innerHTML = board[i][j].unicode;
+        var piece_div = "<div id='" + board[i][j].id + "' class='" + board[i][j].color + " piece" + "'>" +  board[i][j].unicode + "</div>";
+      } else {
+        var piece_div = "<div class='empty'></div>";
       }
+      elem.innerHTML = piece_div;
     }
   }
   load_listeners();
@@ -44,13 +47,25 @@ function load_pieces() {
 var selected_count = 0;
 
 function select(id) {
-  var elem = document.getElementById(id);
+  var tile = document.getElementById(id);
+  var elem = tile.children[0];
+    console.log(elem.classList.contains("selected"));
   if (elem.classList.contains("selected")) {
     elem.classList.remove("selected");
     selected_count--;
-  } else if (selected_count < 2) {
+    return;
+  }
+
+  if (selected_count==0 && valid_first_selection(elem)) {
     elem.classList.add("selected");
     selected_count++;
+    return;
+  }
+
+  if (selected_count==1 && valid_second_selection(elem)) {
+    elem.classList.add("selected");
+    selected_count++;
+    return;
   }
 }
 
@@ -59,7 +74,7 @@ function load_listeners() {
     for (var j = 0; j < board[i].length; j++) {
       var id = i + "" + j;
       document.getElementById(id).addEventListener("click", function(e) {
-        select(e.target.id);
+        select(e.path[1].id);
       });
     }
   }

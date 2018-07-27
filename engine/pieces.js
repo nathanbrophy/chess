@@ -1,6 +1,6 @@
 var pieces = {
   black_king: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 4,
       y: 7
@@ -12,7 +12,7 @@ var pieces = {
   },
 
   black_queen: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 3,
       y: 7
@@ -24,7 +24,7 @@ var pieces = {
   },
 
   black_bishop_1: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 2,
       y: 7
@@ -36,7 +36,7 @@ var pieces = {
   },
 
   black_bishop_2: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 5,
       y: 7
@@ -48,7 +48,7 @@ var pieces = {
   },
 
   black_knight_1: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 1,
       y: 7
@@ -60,7 +60,7 @@ var pieces = {
   },
 
   black_knight_2: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 6,
       y: 7
@@ -72,7 +72,7 @@ var pieces = {
   },
 
   black_rook_1: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 0,
       y: 7
@@ -84,7 +84,7 @@ var pieces = {
   },
 
   black_rook_2: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 7,
       y: 7
@@ -97,7 +97,7 @@ var pieces = {
 
 
   black_pawn_1: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 0,
       y: 6
@@ -109,7 +109,7 @@ var pieces = {
   },
 
   black_pawn_2: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 1,
       y: 6
@@ -121,7 +121,7 @@ var pieces = {
   },
 
   black_pawn_3: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 2,
       y: 6
@@ -133,7 +133,7 @@ var pieces = {
   },
 
   black_pawn_4: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 3,
       y: 6
@@ -145,7 +145,7 @@ var pieces = {
   },
 
   black_pawn_5: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 4,
       y: 6
@@ -157,7 +157,7 @@ var pieces = {
   },
 
   black_pawn_6: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 5,
       y: 6
@@ -169,7 +169,7 @@ var pieces = {
   },
 
   black_pawn_7: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 6,
       y: 6
@@ -181,7 +181,7 @@ var pieces = {
   },
 
   black_pawn_8: {
-    color: "black",
+    color: "black_piece",
     location: {
       x: 7,
       y: 6
@@ -194,7 +194,7 @@ var pieces = {
 
 
   white_king: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 4,
       y: 0
@@ -206,7 +206,7 @@ var pieces = {
   },
 
   white_queen: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 3,
       y: 0
@@ -218,7 +218,7 @@ var pieces = {
   },
 
   white_bishop_1: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 2,
       y: 0
@@ -230,7 +230,7 @@ var pieces = {
   },
 
   white_bishop_2: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 5,
       y: 0
@@ -242,7 +242,7 @@ var pieces = {
   },
 
   white_knight_1: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 1,
       y: 0
@@ -254,7 +254,7 @@ var pieces = {
   },
 
   white_knight_2: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 6,
       y: 0
@@ -266,7 +266,7 @@ var pieces = {
   },
 
   white_rook_1: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 0,
       y: 0
@@ -278,7 +278,7 @@ var pieces = {
   },
 
   white_rook_2: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 7,
       y: 0
@@ -291,7 +291,7 @@ var pieces = {
 
 
   white_pawn_1: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 0,
       y: 1
@@ -303,7 +303,7 @@ var pieces = {
   },
 
   white_pawn_2: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 1,
       y: 1
@@ -315,7 +315,7 @@ var pieces = {
   },
 
   white_pawn_3: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 2,
       y: 1
@@ -327,7 +327,7 @@ var pieces = {
   },
 
   white_pawn_4: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 3,
       y: 1
@@ -339,7 +339,7 @@ var pieces = {
   },
 
   white_pawn_5: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 4,
       y: 1
@@ -351,7 +351,7 @@ var pieces = {
   },
 
   white_pawn_6: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 5,
       y: 1
@@ -363,7 +363,7 @@ var pieces = {
   },
 
   white_pawn_7: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 6,
       y: 1
@@ -375,7 +375,7 @@ var pieces = {
   },
 
   white_pawn_8: {
-    color: "white",
+    color: "white_piece",
     location: {
       x: 7,
       y: 1

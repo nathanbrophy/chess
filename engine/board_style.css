@@ -5,10 +5,11 @@
 
 #board_container {
   display: grid;
+  height: 800px;
 }
 
 .tile {
-   display: table-cell;
+  display: table-cell;
   height: 100px;
   text-align: center;
   font-size: 90px;
@@ -32,4 +33,9 @@
 
 .selected {
   background-color: blue !important;
+}
+
+.empty {
+  height: 100%;
+  width: 100%;
 }
