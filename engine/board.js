@@ -59,10 +59,8 @@ function select(id) {
     elem.classList.add("selected");
     game_info.selected_count++;
     if (validate_move()) {
-      console.log("validate move");
       game_step();
     }
-    console.log("clear");
     clear_selected();
   }
 }
@@ -84,7 +82,6 @@ function load_listeners() {
     for (var j = 0; j < board[i].length; j++) {
       var id = i + "" + j;
       document.getElementById(id).addEventListener("click", function(e) {
-        console.log(e);
         if (e.path) {
           select(e.path[1].id);
         } else {

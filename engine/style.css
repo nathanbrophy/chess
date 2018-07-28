@@ -54,6 +54,11 @@ thead {
   margin-top:10px;"
 }
 
+#move_log {
+  text-align: center;
+  margin: auto;
+}
+
 @media only screen and (max-width:620px) {
   /* For mobile phones: */
   .menu, .main, .right {

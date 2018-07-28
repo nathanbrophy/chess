@@ -1,5 +1,4 @@
 function clear_tile(id) {
-  console.log(id);
   document.getElementById(id).innerHTML = "<div class='empty'></div>";
 }
 

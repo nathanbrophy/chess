@@ -93,8 +93,6 @@ function king_validate_move() {
   if ((x_dif == 1 && y_dif == 1) || (x_dif == 1 && y_dif == 0) || (x_dif == 0 && y_dif == 1)) {
     pieces[piece.id].location.x = x;
     pieces[piece.id].location.y = y;
-    console.log("move");
-    console.log(pieces);
   }
 }
 
@@ -150,7 +148,6 @@ function change_turn() {
 }
 
 function game_step() {
-  console.log("game step");
   move_piece();
   log_move();
   change_turn();
@@ -176,4 +173,5 @@ function begin_game() {
   load_pieces();
   document.getElementById("turn_box").innerHTML = "White's Turn";
   document.getElementById("game_btn").innerHTML = "Restart Game";
+  document.getElementById("move_log").innerHTML = "<tr><th>Move</th><th>Player</th></tr>";
 }
