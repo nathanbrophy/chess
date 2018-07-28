@@ -10,6 +10,6 @@ function add_piece(tile_id, piece) {
 }
 
 function move_piece() {
-  clear_tile(game_info.current_move.start_selected.tile_id);
-  add_piece(game_info.current_move.end_selected.tile_id, game_info.current_move.start_selected.piece);
+  clear_tile(start_selected.tile_id);
+  add_piece(end_selected.tile_id, start_selected.piece);
 }

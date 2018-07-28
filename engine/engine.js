@@ -1,31 +1,40 @@
+////////////////////////////////////////////////////////////////////////////////
+// Global Variables
 var WHITETURN = 0;
 var BLACKTURN = 1;
 var ENDGAME = 2;
 var NOTSTARTED = 3;
 
+var start_selected = {
+  tile: {
+    x: 0,
+    y: 0
+  },
+  piece_id: "",
+  piece_class: "",
+  piece: {}
+},
+var end_selected = {
+  tile: {
+    x: 0,
+    y: 0
+  },
+  piece_id: "",
+  piece_class: "",
+  piece: {},
+  isEmpty: ""
+}
+
 var game_info = {
   turn: WHITETURN,
   selected_count: 0,
-  current_move: {
-    start_selected: {
-      tile_id: "",
-      piece_id: "",
-      piece_class: "",
-      piece: {}
-    },
-    end_selected: {
-      tile_id: "",
-      piece_id: "",
-      piece_class: "",
-      piece: {},
-      isEmpty: ""
-    }
-  },
   move_log: {}
 }
 
+////////////////////////////////////////////////////////////////////////////////
 
 function valid_first_selection(piece) {
+  console.log(piece.parentElement.id[0]);
   var valid = false;
   if (game_info.turn == WHITETURN) {
     valid = piece.classList.contains("white_piece");
@@ -34,10 +43,11 @@ function valid_first_selection(piece) {
   }
 
   if (valid) {
-    game_info.current_move.start_selected.piece_id = piece.id;
-    game_info.current_move.start_selected.piece_class = piece.classList[0];
-    game_info.current_move.start_selected.tile_id = piece.parentElement.id;
-    game_info.current_move.start_selected.piece = pieces[piece.id];
+    start_selected.piece_id = piece.id;
+    start_selected.piece_class = piece.classList[0];
+    start_selected.tile.x = piece.parentElement.id[0];
+    start_selected.tile.y = piece.parentElement.id[1];
+    start_selected.piece = pieces[piece.id];
   }
 
   return valid;
@@ -52,19 +62,21 @@ function valid_second_selection(piece) {
   }
 
   if (valid) {
-    game_info.current_move.end_selected.tile_id = piece.parentElement.id;
-    game_info.current_move.end_selected.isEmpty = piece.classList.contains("empty");
-    if (!game_info.current_move.end_selected.isEmpty) {
-      game_info.current_move.end_selected.piece_id = piece.id;
-      game_info.current_move.end_selected.piece_class = piece.classList[0];
-      game_info.current_move.end_selected.piece = pieces[piece.id];
+    end_selected.tile.x = piece.parentElement.id[0];
+    end_selected.tile.y = piece.parentElement.id[1];
+    end_selected.isEmpty = piece.classList.contains("empty");
+
+    if (!end_selected.isEmpty) {
+      end_selected.piece_id = piece.id;
+      end_selected.piece_class = piece.classList[0];
+      end_selected.piece = pieces[piece.id];
     }
   }
   return valid;
 }
 
 function validate_move() {
-  switch (game_info.current_move.start_selected.piece_class) {
+  switch (start_selected.piece_class) {
     case "king":
       return king_validate_move();
     case "queen":
@@ -83,9 +95,9 @@ function validate_move() {
 }
 
 function king_validate_move() {
-  var piece = game_info.current_move.start_selected.piece;
-  var x = Number(game_info.current_move.end_selected.tile_id[0]);
-  var y = Number(game_info.current_move.end_selected.tile_id[1]);
+  var piece = start_selected.piece;
+  var x = Number(end_selected.tile_id[0]);
+  var y = Number(end_selected.tile_id[1]);
 
   var x_dif = Math.abs(piece.location.x - x);
   var y_dif = Math.abs(piece.location.y - y);
@@ -154,9 +166,9 @@ function game_step() {
 }
 
 function log_move() {
-  var piece = game_info.current_move.start_selected.piece_class;
-  var from = game_info.current_move.start_selected.tile_id;
-  var to = game_info.current_move.end_selected.tile_id;
+  var piece = start_selected.piece_class;
+  var from = start_selected.tile_id;
+  var to = end_selected.tile_id;
 
   var str = "Moved " + piece + " from " + from + " to " + to;
   var player;
