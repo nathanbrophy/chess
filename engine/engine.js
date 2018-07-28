@@ -71,7 +71,7 @@ function validate_move() {
       return queen_validate_move();
     case "bishop":
       return bishop_validate_move();
-    case "kinght":
+    case "knight":
       return knight_validate_move();
     case "rook":
       return rook_validate_move();
@@ -99,23 +99,23 @@ function king_validate_move() {
 }
 
 function queen_validate_move() {
-
+  return true;
 }
 
 function bishop_validate_move() {
-
+  return true;
 }
 
 function knight_validate_move() {
-
+  return true;
 }
 
 function rook_validate_move() {
-
+  return true;
 }
 
 function pawn_validate_move() {
-
+  return true;
 }
 
 function change_turn() {
@@ -150,23 +150,25 @@ function change_turn() {
 }
 
 function game_step() {
+  console.log("game step");
+  move_piece();
   log_move();
   change_turn();
 }
 
 function log_move() {
-  var piece = game_info.current_move.start_seleced.piece_class;
-  var from = game_info.current_move.start_seleced.tile_id;
+  var piece = game_info.current_move.start_selected.piece_class;
+  var from = game_info.current_move.start_selected.tile_id;
   var to = game_info.current_move.end_selected.tile_id;
 
   var str = "Moved " + piece + " from " + from + " to " + to;
   var player;
-  if (gmae_info.turn == WHITETURN) { player = "White"; }
+  if (game_info.turn == WHITETURN) { player = "White"; }
   else { player = "Black"; }
 
   var row = "<tr><td>" + str + "</td><td>" + player + "</td></tr>";
 
-  document.getElementById("move_log").append(row);
+  document.getElementById("move_log").innerHTML += row;
 
 }
 

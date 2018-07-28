@@ -59,8 +59,10 @@ function select(id) {
     elem.classList.add("selected");
     game_info.selected_count++;
     if (validate_move()) {
+      console.log("validate move");
       game_step();
     }
+    console.log("clear");
     clear_selected();
   }
 }
