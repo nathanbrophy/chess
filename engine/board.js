@@ -58,7 +58,9 @@ function select(id) {
   } else if (game_info.selected_count==1 && valid_second_selection(elem)) {
     elem.classList.add("selected");
     game_info.selected_count++;
-    validate_move();
+    if (validate_move()) {
+      game_step();
+    }
     clear_selected();
   }
 }
@@ -80,7 +82,12 @@ function load_listeners() {
     for (var j = 0; j < board[i].length; j++) {
       var id = i + "" + j;
       document.getElementById(id).addEventListener("click", function(e) {
-        select(e.path[1].id);
+        console.log(e);
+        if (e.path) {
+          select(e.path[1].id);
+        } else {
+          window.alert("An error has occurred. \nIf you are using firefox, try using another browser");
+        }
       });
     }
   }

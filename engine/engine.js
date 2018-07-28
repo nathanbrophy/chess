@@ -5,7 +5,7 @@ var NOTSTARTED = 3;
 
 var game_info = {
   turn: WHITETURN,
-  selected_count = 0,
+  selected_count: 0,
   current_move: {
     start_selected: {
       tile_id: "",
@@ -67,22 +67,16 @@ function validate_move() {
   switch (game_info.current_move.start_selected.piece_class) {
     case "king":
       return king_validate_move();
-      break;
     case "queen":
       return queen_validate_move();
-      break;
     case "bishop":
       return bishop_validate_move();
-      break;
     case "kinght":
       return knight_validate_move();
-      break;
     case "rook":
       return rook_validate_move();
-      break;
     case "pawn":
       return pawn_validate_move();
-      break;
     default:
       return false;
   }
@@ -122,4 +116,62 @@ function rook_validate_move() {
 
 function pawn_validate_move() {
 
+}
+
+function change_turn() {
+  if (game_info.turn == WHITETURN) {
+    game_info.turn = BLACKTURN;
+    document.getElementById("turn_box").innerHTML = "Black's Turn";
+
+  } else if (game_info.turn == BLACKTURN) {
+    game_info.turn = WHITETURN;
+    document.getElementById("turn_box").innerHTML = "White's Turn";
+
+  }
+
+  game_info.current_move = {
+    start_selected: {
+        tile_id: "",
+        piece_id: "",
+        piece_class: "",
+        piece: {}
+      },
+      end_selected: {
+        tile_id: "",
+        piece_id: "",
+        piece_class: "",
+        piece: {},
+        isEmpty: ""
+      }
+    };
+
+    game_info.selected_count = 0;
+    clear_tile();
+}
+
+function game_step() {
+  log_move();
+  change_turn();
+}
+
+function log_move() {
+  var piece = game_info.current_move.start_seleced.piece_class;
+  var from = game_info.current_move.start_seleced.tile_id;
+  var to = game_info.current_move.end_selected.tile_id;
+
+  var str = "Moved " + piece + " from " + from + " to " + to;
+  var player;
+  if (gmae_info.turn == WHITETURN) { player = "White"; }
+  else { player = "Black"; }
+
+  var row = "<tr><td>" + str + "</td><td>" + player + "</td></tr>";
+
+  document.getElementById("move_log").append(row);
+
+}
+
+function begin_game() {
+  load_pieces();
+  document.getElementById("turn_box").innerHTML = "White's Turn";
+  document.getElementById("game_btn").innerHTML = "Restart Game";
 }
