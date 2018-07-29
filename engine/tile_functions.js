@@ -1,15 +1,19 @@
-function clear_tile(id) {
-  document.getElementById(id).innerHTML = "<div class='empty'></div>";
-}
-
-function add_piece(tile_id, piece) {
-  if (!document.getElementById(tile_id).children[0].classList.contains("empty")) { // capture
-    window.alert(document.getElementById(tile_id).children[0].classList[0] + " captured");
-  }
-  document.getElementById(tile_id).innerHTML = "<div id='" + piece.id + "' class='" + piece.class + " piece " + piece.color + "'>" +  piece.unicode + "</div>";
-}
-
 function move_piece() {
-  clear_tile(start_selected.tile_id);
-  add_piece(end_selected.tile_id, start_selected.piece);
+  var captured_piece = board[end_selected.tile.x][end_selected.tile.y];
+  var move_piece = board[start_selected.tile.x][start_selected.tile.y];
+  board[start_selected.tile.x][start_selected.tile.y] = "";
+  board[end_selected.tile.x][end_selected.tile.y] = move_piece;
+  load_pieces();
+}
+
+function clear_selected() {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      var elem = document.getElementById(i + "" + j).children[0];
+      if (elem.classList.contains("selected")) {
+        elem.classList.remove("selected");
+      }
+    }
+  }
+  game_info.selected_count = 0;
 }

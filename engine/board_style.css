@@ -16,12 +16,8 @@
 }
 
 .tile:hover {
-  background-color: red;
+  background-color: #DA8A67;
   cursor: pointer;
-}
-
-.tile:checked {
-  background-color: darkred;
 }
 
 .black {
@@ -32,10 +28,20 @@
 }
 
 .selected {
-  background-color: blue !important;
+  background-color: #2E5894 !important;
 }
 
 .empty {
   height: 100%;
   width: 100%;
+}
+
+.error {
+    animation-name: example;
+    animation-duration: 0.25s;
+    animation-iteration-count: 2;
+}
+
+@keyframes example {
+    50%  {background-color: #D92121;}
 }

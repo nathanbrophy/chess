@@ -1,12 +1,15 @@
 var board = [...Array(8)].map(e => Array(8));
 
-function load_board() {
+function new_board() {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      board[i][j] = "";
+    }
+  }
   for (var variable in pieces) {
     board[pieces[variable].location.y][pieces[variable].location.x] = pieces[variable];
   }
 }
-load_board();
-
 
 function print_board() {
   var table = "<table id='chess_board'>";
@@ -32,7 +35,7 @@ function load_pieces() {
   for (var i = 0; i < board.length; i++) {
     for (var j = 0; j < board[i].length; j++) {
       var elem = document.getElementById(i + "" + j);
-      if (board[i][j]) {
+      if (board[i][j] != "") {
         var piece_div = "<div id='" + board[i][j].id + "' class='" + board[i][j].class + " piece " + board[i][j].color + "'>" +  board[i][j].unicode + "</div>";
       } else {
         var piece_div = "<div class='empty'></div>";
@@ -40,12 +43,12 @@ function load_pieces() {
       elem.innerHTML = piece_div;
     }
   }
-  load_listeners();
 }
 
 function select(id) {
   var tile = document.getElementById(id);
   var elem = tile.children[0];
+  remove_error_animations();
 
   if (elem.classList.contains("selected")) {
     elem.classList.remove("selected");
@@ -62,19 +65,9 @@ function select(id) {
       game_step();
     }
     clear_selected();
+  } else {
+    elem.parentElement.classList.add("error");
   }
-}
-
-function clear_selected() {
-  for (var i = 0; i < board.length; i++) {
-    for (var j = 0; j < board[i].length; j++) {
-      var elem = document.getElementById(i + "" + j).children[0];
-      if (elem.classList.contains("selected")) {
-        elem.classList.remove("selected");
-      }
-    }
-  }
-  game_info.selected_count = 0;
 }
 
 function load_listeners() {
@@ -88,6 +81,18 @@ function load_listeners() {
           window.alert("An error has occurred. \nIf you are using firefox, try using another browser");
         }
       });
+    }
+  }
+}
+
+
+function remove_error_animations() {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[i].length; j++) {
+      var elem = document.getElementById(i + "" + j).children[0];
+      if (elem.parentElement.classList.contains("error")) {
+        elem.parentElement.classList.remove("error");
+      }
     }
   }
 }

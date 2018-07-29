@@ -1,44 +1,8 @@
-////////////////////////////////////////////////////////////////////////////////
-// Global Variables
-var WHITETURN = 0;
-var BLACKTURN = 1;
-var ENDGAME = 2;
-var NOTSTARTED = 3;
-
-var start_selected = {
-  tile: {
-    x: 0,
-    y: 0
-  },
-  piece_id: "",
-  piece_class: "",
-  piece: {}
-},
-var end_selected = {
-  tile: {
-    x: 0,
-    y: 0
-  },
-  piece_id: "",
-  piece_class: "",
-  piece: {},
-  isEmpty: ""
-}
-
-var game_info = {
-  turn: WHITETURN,
-  selected_count: 0,
-  move_log: {}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-
 function valid_first_selection(piece) {
-  console.log(piece.parentElement.id[0]);
   var valid = false;
-  if (game_info.turn == WHITETURN) {
+  if (game_info.player1) {
     valid = piece.classList.contains("white_piece");
-  } else if (game_info.turn == BLACKTURN) {
+  } else {
     valid = piece.classList.contains("black_piece");
   }
 
@@ -55,9 +19,9 @@ function valid_first_selection(piece) {
 
 function valid_second_selection(piece) {
   var valid = false;
-  if (game_info.turn == WHITETURN) {
+  if (game_info.player1) {
     valid = piece.classList.contains("black_piece") || piece.classList.contains("empty");
-  } else if (game_info.turn == BLACKTURN) {
+  } else {
     valid = piece.classList.contains("white_piece") || piece.classList.contains("empty");
   }
 
@@ -126,64 +90,4 @@ function rook_validate_move() {
 
 function pawn_validate_move() {
   return true;
-}
-
-function change_turn() {
-  if (game_info.turn == WHITETURN) {
-    game_info.turn = BLACKTURN;
-    document.getElementById("turn_box").innerHTML = "Black's Turn";
-
-  } else if (game_info.turn == BLACKTURN) {
-    game_info.turn = WHITETURN;
-    document.getElementById("turn_box").innerHTML = "White's Turn";
-
-  }
-
-  game_info.current_move = {
-    start_selected: {
-        tile_id: "",
-        piece_id: "",
-        piece_class: "",
-        piece: {}
-      },
-      end_selected: {
-        tile_id: "",
-        piece_id: "",
-        piece_class: "",
-        piece: {},
-        isEmpty: ""
-      }
-    };
-
-    game_info.selected_count = 0;
-    clear_tile();
-}
-
-function game_step() {
-  move_piece();
-  log_move();
-  change_turn();
-}
-
-function log_move() {
-  var piece = start_selected.piece_class;
-  var from = start_selected.tile_id;
-  var to = end_selected.tile_id;
-
-  var str = "Moved " + piece + " from " + from + " to " + to;
-  var player;
-  if (game_info.turn == WHITETURN) { player = "White"; }
-  else { player = "Black"; }
-
-  var row = "<tr><td>" + str + "</td><td>" + player + "</td></tr>";
-
-  document.getElementById("move_log").innerHTML += row;
-
-}
-
-function begin_game() {
-  load_pieces();
-  document.getElementById("turn_box").innerHTML = "White's Turn";
-  document.getElementById("game_btn").innerHTML = "Restart Game";
-  document.getElementById("move_log").innerHTML = "<tr><th>Move</th><th>Player</th></tr>";
 }
