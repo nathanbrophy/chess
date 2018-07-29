@@ -85,7 +85,6 @@ function load_listeners() {
   }
 }
 
-
 function remove_error_animations() {
   for (var i = 0; i < board.length; i++) {
     for (var j = 0; j < board[i].length; j++) {
