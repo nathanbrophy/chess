@@ -73,7 +73,7 @@ function log_move() {
   var from = start_selected.tile.x + "" + start_selected.tile.y;
   var to = end_selected.tile.x + "" + start_selected.tile.y;
 
-  var str = "Moved " + piece + " from " + from + " to " + to;
+  var str = "" + piece + " from " + from + " to " + to;
   var player;
   if (game_info.player1) { player = "White"; }
   else { player = "Black"; }
