@@ -95,5 +95,6 @@ function begin_game() {
   document.getElementById("turn_box").innerHTML = "White's Turn";
   document.getElementById("game_btn").innerHTML = "Restart Game";
   document.getElementById("move_log").innerHTML = "<tr><th id='move'>Move</th><th id='player'>Player</th></tr>";
+  document.getElementById("capture_log").innerHTML = "<tr><td id='white_capture'></td><td id='black_capture'></td></tr>";
   game_info.player1 = true;
 }
