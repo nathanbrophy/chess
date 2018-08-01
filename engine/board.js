@@ -58,12 +58,10 @@ function select(id) {
     elem.classList.add("selected");
     game_info.selected_count++;
     return;
-  } else if (game_info.selected_count==1 && valid_second_selection(elem)) {
+  } else if (game_info.selected_count==1 && valid_second_selection(elem) && validate_move()) {
     elem.classList.add("selected");
     game_info.selected_count++;
-    if (validate_move()) {
-      game_step();
-    }
+    game_step();
     clear_selected();
   } else {
     elem.parentElement.classList.add("error");
