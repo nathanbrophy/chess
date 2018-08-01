@@ -1,5 +1,12 @@
 function move_piece() {
   var captured_piece = board[end_selected.tile.x][end_selected.tile.y];
+  if (captured_piece != "") {
+    if (game_info.player1) {
+      document.getElementById("white_capture").innerHTML += captured_piece.unicode + "<br />";
+    } else {
+      document.getElementById("black_capture").innerHTML += captured_piece.unicode + "<br />";
+    }
+  }
   var move_piece = board[start_selected.tile.x][start_selected.tile.y];
   board[start_selected.tile.x][start_selected.tile.y] = "";
   board[end_selected.tile.x][end_selected.tile.y] = move_piece;
