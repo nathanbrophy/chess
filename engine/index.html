@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="engine.js"></script>
     <script src="pieces.js"></script>
     <script src="board.js"></script>
@@ -18,15 +20,22 @@
       <h1>Maverick Chess</h1>
     </div>
 
-    <div style="overflow:auto ">
+    <div style="overflow: auto; height: 800px;">
       <div class="menu">
-        <div><button id="game_btn" onclick="begin_game();">Begin Game</button></div>
+        <div><button id="game_btn" class="btn btn-success" onclick="begin_game();">Begin Game</button></div>
         <div id="turn_box">Load the pieces to begin a game</div>
         <div>
           <table id="move_log">
           </table>
         </div>
-        <a href="#">Link 4</a>
+        <div>
+          <table id="capture_log">
+            <tr>
+              <td id="white_capture"></td>
+              <td id="black_capture"></td>
+            </tr>
+          </table>
+        </div>
       </div>
 
       <div class="main">

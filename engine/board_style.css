@@ -5,13 +5,13 @@
 
 #board_container {
   display: grid;
-  height: 625px;
+  height: 800px;
 }
 
 .tile {
   display: table-cell;
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
   text-align: center;
   font-size: 60px;
 }
