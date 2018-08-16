@@ -81,7 +81,7 @@ function bishop_validate_move() {
 }
 
 function knight_validate_move() {
-  return true;
+  return isValidKnightMove(Number(start_selected.tile.x), Number(start_selected.tile.y), Number(end_selected.tile.x), Number(end_selected.tile.y));
 }
 
 function rook_validate_move() {
@@ -91,6 +91,14 @@ function rook_validate_move() {
 
 function pawn_validate_move() {
   return true;
+}
+
+function isValidKnightMove(x_start, y_start, x_end, y_end) {
+  if !(((Math.abs(x_start - x_end) == 2 && Math.abs(y_start - y_end) == 1) || (Math.abs(x_start - x_end) == 1 && Math.abs(y_start - y_end) == 2))) {
+    return false;
+  }
+  return true;
+
 }
 
 function isValidDiagonal(x_start, y_start, x_end, y_end) {
