@@ -59,17 +59,11 @@ function validate_move() {
 }
 
 function king_validate_move() {
-  var piece = start_selected.piece;
-  var x = Number(end_selected.tile_id[0]);
-  var y = Number(end_selected.tile_id[1]);
-
-  var x_dif = Math.abs(piece.location.x - x);
-  var y_dif = Math.abs(piece.location.y - y);
-
-  if ((x_dif == 1 && y_dif == 1) || (x_dif == 1 && y_dif == 0) || (x_dif == 0 && y_dif == 1)) {
-    pieces[piece.id].location.x = x;
-    pieces[piece.id].location.y = y;
+  if (Math.abs(Number(start_selected.tile.x) - Number(end_selected.tile.x)) > 1 ||
+      Math.abs(Number(start_selected.tile.y) - Number(end_selected.tile.y)) > 1) {
+    return false;
   }
+  return true;
 }
 
 function queen_validate_move() {
@@ -81,24 +75,29 @@ function bishop_validate_move() {
 }
 
 function knight_validate_move() {
-  return isValidKnightMove(Number(start_selected.tile.x), Number(start_selected.tile.y), Number(end_selected.tile.x), Number(end_selected.tile.y));
+  return isValidKnightMove(Number(start_selected.tile.x),
+                            Number(start_selected.tile.y),
+                            Number(end_selected.tile.x),
+                            Number(end_selected.tile.y));
 }
 
 function rook_validate_move() {
-  console.log(Number(start_selected.tile.x), Number(start_selected.tile.y), Number(end_selected.tile.x), Number(end_selected.tile.y));
-  return isValidStraight(Number(start_selected.tile.x), Number(start_selected.tile.y), Number(end_selected.tile.x), Number(end_selected.tile.y));
+  return isValidStraight(Number(start_selected.tile.x),
+                          Number(start_selected.tile.y),
+                          Number(end_selected.tile.x),
+                          Number(end_selected.tile.y));
 }
 
 function pawn_validate_move() {
   return true;
 }
 
+
 function isValidKnightMove(x_start, y_start, x_end, y_end) {
-  if !(((Math.abs(x_start - x_end) == 2 && Math.abs(y_start - y_end) == 1) || (Math.abs(x_start - x_end) == 1 && Math.abs(y_start - y_end) == 2))) {
+  if (!((Math.abs(x_start - x_end) == 2 && Math.abs(y_start - y_end) == 1) || (Math.abs(x_start - x_end) == 1 && Math.abs(y_start - y_end) == 2))) {
     return false;
   }
   return true;
-
 }
 
 function isValidDiagonal(x_start, y_start, x_end, y_end) {
@@ -185,7 +184,6 @@ function isValidStraight(x_start, y_start, x_end, y_end) {
         if (board[i][j] != "") {
           return false;
         }
-
         i--;
       }
       return true;
