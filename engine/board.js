@@ -60,6 +60,7 @@ function select(id) {
     return;
   } else if (game_info.selected_count==1 && valid_second_selection(elem) && validate_move()) {
     elem.classList.add("selected");
+    elem.move_count++;
     game_info.selected_count++;
     game_step();
     clear_selected();

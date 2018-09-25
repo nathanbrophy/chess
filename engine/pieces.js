@@ -105,6 +105,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_1",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -117,6 +118,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_2",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -129,6 +131,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_3",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -141,6 +144,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_4",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -153,6 +157,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_5",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -165,6 +170,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_6",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -177,6 +183,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_7",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -189,6 +196,7 @@ var pieces = {
     captured: false,
     id: "black_pawn_8",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9823"
   },
 
@@ -299,6 +307,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_1",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -310,7 +319,7 @@ var pieces = {
     },
     captured: false,
     id: "white_pawn_2",
-    class: "pawn",
+    class: "pawn", move_count: 0,
     unicode: "&#9817"
   },
 
@@ -323,6 +332,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_3",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -335,6 +345,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_4",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -347,6 +358,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_5",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -359,6 +371,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_6",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -371,6 +384,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_7",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   },
 
@@ -383,6 +397,7 @@ var pieces = {
     captured: false,
     id: "white_pawn_8",
     class: "pawn",
+    move_count: 0,
     unicode: "&#9817"
   }
 }
