@@ -46,14 +46,37 @@ function rook_validate_move() {
                           Number(end_selected.tile.x),
                           Number(end_selected.tile.y));
 }
-// TODO: implement pawn move
+
 function pawn_validate_move() {
-  if (start_selected.move_count == 1) { //first move
-    console.log("second move");
+  //direction
+  console.log(start_selected.tile, end_selected.tile);
+  if (board[start_selected.tile.x][start_selected.tile.y].color == "black_piece") {
+    if (start_selected.tile.x < end_selected.tile.x) { return false; }
+  } else {
+    if (Number(start_selected.tile.x) > Number(end_selected.tile.x)) { return false; }
   }
 
-  console.log(board);
-  return true;
+
+  //forward 2
+  if (start_selected.move_count < 1) { //first move;
+    if (Math.abs(Number(start_selected.tile.x) - Number(end_selected.tile.x)) == 2 && Math.abs(Number(start_selected.tile.y) - Number(end_selected.tile.y)) == 0 && board[end_selected.tile.x][end_selected.tile.y] == "") {
+      return true;
+    }
+  }
+
+  //forward 1
+  if (Math.abs(Number(start_selected.tile.x) - Number(end_selected.tile.x)) == 1 && Math.abs(Number(start_selected.tile.y) - Number(end_selected.tile.y)) == 0 && board[end_selected.tile.x][end_selected.tile.y] == "") {
+    return true;
+  }
+
+  //capture
+  if (Math.abs(Number(start_selected.tile.x) - Number(end_selected.tile.x)) == 1 && Math.abs(Number(start_selected.tile.y) - Number(end_selected.tile.y)) == 1) {
+    if (board[end_selected.tile.x][end_selected.tile.y] != "") {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 
