@@ -48,9 +48,15 @@ function rook_validate_move() {
 }
 // TODO: implement pawn move
 function pawn_validate_move() {
+  console.log(start_selected.move_count);
   if (start_selected.move_count > 0) {
     console.log("second move");
   }
+  start_selected.move_count++;
+
+  board[start_selected.tile.x][start_selected.tile.y].move_count++;
+
+console.log(board);
   return true;
 }
 

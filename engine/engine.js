@@ -7,11 +7,13 @@ function valid_first_selection(piece) {
   }
 
   if (valid) {
+    console.log(piece);
     start_selected.piece_id = piece.id;
     start_selected.piece_class = piece.classList[0];
     start_selected.tile.x = piece.parentElement.id[0];
     start_selected.tile.y = piece.parentElement.id[1];
     start_selected.piece = pieces[piece.id];
+    start_selected.move_count = board[start_selected.tile.x][start_selected.tile.y].move_count;
   }
 
   return valid;
